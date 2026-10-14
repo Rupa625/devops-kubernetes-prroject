@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: devops-web
+spec:
+   replicas: 1
+   selector:
+     matchLabels:
+       app: devops-web
+   template:
+    metadata:
+      labels:
+        app: devops-web
+    spec:
+      containers:
+       - name: nginx
+         image: nginx:stable
+         ports:
+           - containerPort: 80
+         volumeMounts:
+           - name: webpage
+             mountPath: /usr/share/nginx/html/index.html
+             subPath: index.html
+      volumes:
+          - name: webpage
+            configMap:
+             name: devops-webpage

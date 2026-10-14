@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+   name: devops-webpage
+data:
+   index.html: |
+     <!DOCTYPE html>
+     <html>
+     <head>
+       <title>My DevOps Project</title>
+     </head>
+      <bodystyle="background-colour:navy; colour: white; text-align: center; font-family: Arial;">
+       <h1>Welcome DevOps!</h1>
+       <h2>My Second Kubernetes Project</h2>
+       <p>Running with Docker,Kubernetes and Minikube.</p>
+     </body>
+     </html>
+  
+     
